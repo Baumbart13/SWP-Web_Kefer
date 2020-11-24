@@ -1,0 +1,93 @@
+﻿@model ModDB_Rebuild.Models.Mod
+
+
+@{
+    ViewData["Title"] = "CreateNewMod";
+}
+
+<div style="clear: both;"></div>
+<div class="headermediabox">
+    <div class="supporter">
+        <div class="DBsupporter" data-dfp-id="MODDB_LB_1" data-dfp-sizes="728x90, 960x250, 970x250" id="div-ga-MODDB_LB_1"></div>
+    </div>
+</div>
+<div class="column span-300-alt first">
+    <div class="normalbox">
+        <div class="normalcorner">
+            <div class="title">
+                <span class="heading">AddNewMod</span>
+            </div>
+        </div>
+        <div class="inner">
+            <div id="modsform" class="body clear">
+                <div class="tooltip"></div>
+                <p>
+                    Working on a mod? Add it below and we'll help showcase your updates to the masses. Individual items like skins, maps, sprites can optionally be submitted to our
+                    <a asp-action="add" asp-controller="addons">addons section</a>
+                    (it's easier if you don't require an entire mod profile).
+                </p>
+                <div class="table tableform">
+                    <form asp-controller="mod" asp-action="createNewMod" method="post" name="modsform">
+                        <input type="hidden" name="formhash" value="a8f5a51a7d72bee478e57a0d52abcf62" />
+                        <div class="row">
+                            <label>Location</label>
+                            <p>
+                                <a asp-action="mod" asp-controller="mod">Mods</a>
+                                :
+                                <a asp-action="add" asp-controller="mod">Add</a>
+                                <span style="float: right;">
+                                    (<a id="detailedtoggle" href="#">Show Optional Fields</a>)  <!-- TODO: implement Event here to toggle options -->
+                                </span>
+                            </p>
+                        </div>
+                        <!-- TODO: the above button toggles to show/hide this for additional icon -->
+                        <div class="row rowmodsicon rowdetailed clear">
+                            <label for="modsicon">Icon</label>
+                            <p class="helper"></p>
+                            <ul class="exhelper">
+                                <li>64x64 or larger recommended</li>
+                                <li>1mb max</li>
+                            </ul>
+                            <p class="tempicon helpertext"></p>
+                            <p class="uploadicon">
+                                <input type="file" name="icon" maxlength="500" id="modsicon" class="file" size="34" accept=".gif,.jpg,.jpeg,.png">
+                            </p>
+                        </div>
+                        <div class="rowtemp"></div>
+                        <div class="row rowmodslogo clear">
+                            <label for="modslogo">Logo<em>*</em></label>
+                            <p class="helper">Shown when<a asp-action="mod" asp-controller="mod" target="_blank">browsing mods</a></p>
+                            <ul class="exhelper">
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form asp-controller="mod" asp-action="createNewMod" method="post">
+
+    <label asp-for="Mod_Name">Name of Mod</label><br />
+    <input asp-for="Mod_Name" /><br />
+    <span asp-validation-for="Mod_Name" class="text-danger" style="font-size: 85%"></span><br />
+
+    <label asp-for="Mod_Game">Which game</label><br />
+    <input asp-for="Mod_Name" /><br />
+    <span asp-validation-for="Mod_Name" class="text-danger" style="font-size: 85%"></span><br />
+
+    <label asp-for="Mod_Name">Name of Mod</label><br />
+    <input asp-for="Mod_Name" /><br />
+    <span asp-validation-for="Mod_Name" class="text-danger" style="font-size: 85%"></span><br />
+
+    <label asp-for="Mod_Name">Name of Mod</label><br />
+    <input asp-for="Mod_Name" /><br />
+    <span asp-validation-for="Mod_Name" class="text-danger" style="font-size: 85%"></span><br />
+
+    <label asp-for="Mod_Name">Name of Mod</label><br />
+    <input asp-for="Mod_Name" /><br />
+    <span asp-validation-for="Mod_Name" class="text-danger" style="font-size: 85%"></span><br />
+</form>

@@ -1,0 +1,143 @@
+﻿
+@{
+    ViewData["Title"] = "Register";
+}
+
+@model ModDB_Rebuild.Models.User;
+
+<div class="normalbox">
+    <div class="normalcorner">
+        <div class="title">
+            <span class="heading">Join Md DB</span>
+        </div>
+    </div>
+    <div class="inner">
+        <div id="membersform" class="body clear">
+            <div class="tooltip"></div>
+            <div style="float: right; margin: 0 10px 10px; width: 250px; text-align: center;">
+                <a asp-action="loginext/steam" asp-controller="Member" class="steamicon" style="float:right; margin-left: 5px; margin-bottom: 4px;" title="Click to connect via Steam"></a>
+                <a asp-action="loginext/google" asp-controller="Member" class="googleicon" style="float:right; margin-left: 5px; margin-bottom: 4px;" title="Click to connect via Google"></a>
+                <a asp-action="loginext/twitter" asp-controller="Member" class="twittericon" style="float:right; margin-left: 5px; margin-bottom: 4px;" title="Click to connect via Twitter"></a>
+                <a asp-action="loginext/facebook" asp-controller="Member" class="facebookicon" style="float:right; margin-left: 5px; margin-bottom: 4px;" title="Click to connect via Facebook"></a>
+
+                <em>Sign in or join with:</em>
+            </div>
+            <p>Join the Mod DB community to explore &amp; follow your favorite games, mods &amp; companies. Or if you are a developer share what you are working on. We have millions of visitors that want to hear about it. Already registered? <a asp-action="login" asp-controller="member">Sign in</a>.</p>
+            <div class="table tableform">
+                <form asp-action="register/membersform" method="post" name="membersform">
+                    <input type="hidden" name="recaptcha" value="03AGdBq257alT0ozJBWvqiULsLfHIiI3RusvRrTrvRvq818mDJfz7cmEqTt4_eUbeP0eQQqoQNIBWOsRLgUB1zBqt4klhpZM1mQy0vIjHRpjq3BlIjSiBQEew-3Bx1am4AEV0IJDVEsZNtIqlHCI8V_5RjHXjLcNoj5a5lI3rp4jy7j3TJdlYxCBmZAfjSXdAPhAJ2ZQYcAkY8KHS-41Bp1ozn61kgnApCDa5UMpJ5XSkVAqhEq_ENF7NY2zequNT0MYqlZvFosq_3Py6Pj40vjXGrtRdXjgTHjTNy3NXYn4Lo9gnrb4fUG6jxLju7RJt1g5mRG1AkV-ymyT3S-EFMYIxR4-YI5Z8h-CB5Tfy59mfgd70HK-qbTH81qWfz9FGxO0wb9-j_-3-yhTrrdrILv3Oj7Einavgz4cePZN5VPnksdPblZ60-fkKhL_sBaRhRKdgZet_9lL8PGuGCeI_-el2OWfYnBFDxQg" id="memberscaptcha" /><input type="hidden" name="timezone" value="+01:00" id="memberstimezone" />
+                    <div class="row rowmembersbotcatcher clear" style="display: none;">
+                        <label for="membersbotcatcher">Botcatcher</label>
+                        <p class="helper"></p>
+                        <span class="fdbeaadebdccbebfformouter">
+                            <span>
+                                <span>
+                                    <span>
+                                        <span>
+                                            <span class="fdbeaadebdccbebfforminner">
+                                                <input type="text" name="IyNhYzdlNzI5NzAwN2Y5MmMyNDcwNmU3MjZiMGM4NDhhMTI1Njk3ODc5ODlib3RjYXRjaGVy" maxlength="100" class="text" autocomplete="off" />
+                                            </span>
+                                        </span>
+                                    </span>
+                                </span>
+                            </span>
+                        </span>
+                        <span class="fdbeaadebdccbebfformouter">
+                            <span>
+                                <span>
+                                    <span class="fdbeaadebdccbebfforminner">
+                                        <input type="text" name="IyNhYzdlNzI5NzAwN2Y5MmMyNDcwNmU3MjZiMGM4NDhhMTMwMjc4MDQ4NTNib3RjYXRjaGVy" maxlength="100" value="" id="membersbotcatcher" class="text" autocomplete="off">
+                                        <input type="hidden" name="IyNhYzdlNzI5NzAwN2Y5MmMyNDcwNmU3MjZiMGM4NDhhMTI1MDQ3NjgzNzBqc2ZpZWxk" value="1">
+                                    </span>
+                                </span>
+                            </span>
+                        </span>
+                        <style>
+                            span.fdbeaadebdccbebfformouter span span span span span {
+                                display: none;
+                            }
+
+                            span.fdbeaadebdccbebfformouter span {
+                                display: inline;
+                            }
+                        </style>
+                    </div>
+                    <div class="row rowmembersemail clear">
+                        <label asp-for="User_EMail">EMail<em>*</em></label>
+                        <p class="helper"></p><span class="bfddfaafbdadfcdeformouter"><span><span><span class="bfddfaafbdadfcdeforminner"><input type="email" name="IyNhYzdlNzI5NzAwN2Y5MmMyNDcwNmU3MjZiMGM4NDhhMTQwMzg2MzY4MTJib3RjYXRjaGVy" maxlength="100" class="text" autocomplete="off"></span></span></span></span><span class="bfddfaafbdadfcdeformouter"><span><span><span><span class="bfddfaafbdadfcdeforminner"><input type="email" name="IyNhYzdlNzI5NzAwN2Y5MmMyNDcwNmU3MjZiMGM4NDhhMTU5MDAwODEwNDRlbWFpbA:E::E:" maxlength="100" value="" id="User_UserEMail" class="text" required="required" autocomplete="off"</span></span></span></span></span>
+                        <style>
+                            span.bfddfaafbdadfcdeformouter span span span.bfddfaafbdadfcdeforminner {
+                                display: none;
+                            }
+
+                            span.bfddfaafbdadfcdeformouter span span span span.bfddfaafbdadfcdeforminner {
+                                display: inline;
+                            }
+                        </style>
+                    </div>
+                    <div class="row rowmemberusername clear">
+                        <label asp-for="User_Username">Username<em>*</em></label>
+                        <p class="helper"></p><span class="ffedaadcdformouter"><span><span><span><span><span><span class="ffedaadcdforminner"><input type="text" name="IyNhYzdlNzI5NzAwN2Y5MmMyNDcwNmU3MjZiMGM4NDhhMTY5MTQwOTA2Mjdib3RjYXRjaGVy" maxlength="20" class="text" autocomplete="off"></span></span></span></span></span></span></span><span class="ffedaadcdformouter"><span><span><span><span class="ffedaadcdforminner"><input type="text" name="IyNhYzdlNzI5NzAwN2Y5MmMyNDcwNmU3MjZiMGM4NDhhMTc4NzY3MDE3ODB1c2VybmFtZQ:E::E:" maxlength="20" value="" id="memberusername" class="text" required="required" autocomplete="off" /><span class="availability"></span></span></span></span></span></span>
+                        <style>
+                            span.ffedaadcdformouter span span span span span span {
+                                display: none;
+                            }
+
+                            span.ffedaadcdformouter span span span {
+                                display: inline;
+                            }
+                        </style>
+                    </div>
+                    <div class="row rowmemberspassword clear">
+                        <label asp-for="User_Username">Password<em>*</em></label>
+                        <p class="helper">We recommend you pick a secure password that is unique, greater than 8 characters in length and contains a combination of letters, numbers and special characters.</p><input type="password" name="password" maxlength="100" id="memberspassword" class="text" required="required" autocomplete="off">
+                    </div>
+                    <input type="hidden" name="country" value="AT" id="memberscountry">					<div class="row rowmembersagegroup clear">
+                        <label asp-for="User_Birthday">Birthday<em>*</em></label>
+                        <p class="helper">Your age is not shown publicly. It is used to determine what content is suitable to view.</p><select name="year" id="membersyear" class="select" style="width: auto; margin-right: 4px;">
+                            <option value="0" selected="selected">Year</option>
+                            @for (int i = DateTime.Now.Year; i > 1920; --i) {
+                                <option value="@i">@i</option>
+                            }
+                        </select>
+
+                        <select name="month" id="membersmonth" class="select" style="width: auto; margin-right: 4px;">
+                            <option value="0" selected="selected">Month</option>
+                            @{string[] monthNames = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+                                string[] monthIndexes = { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" };
+                                for (int i = 0; i < monthNames.Length; ++i) {
+                                    <option value=@monthIndexes[i]>@monthNames[i]</option>
+                                }
+                            }
+                        </select>
+
+                        <select name="day" id="membersday" class="select" style="width: auto; margin-right: 4px;">
+                            <option value="0" selected="selected">Day</option>
+                            @for (int i = 1; i < 32; ++i) {
+                                <option value=@i>@i</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="row rowmembersnewsletters clear">
+                        <label for="membersnewsletters">Newsletters</label>
+                        <p class="helper"></p><label class="checkbox"><input type="checkbox" name="newsletter[1]" value="1"> Mod headlines monthly via <a asp-asction="index" asp-controller="home">ModDB.com</a></label>
+                    </div>
+                    <div class="row rowmembersterms clear">
+                        <label for="membersterms">Terms of use<em>*</em></label>
+                        <p class="helper"></p><label class="checkbox"><input type="checkbox" name="IyNhYzdlNzI5NzAwN2Y5MmMyNDcwNmU3MjZiMGM4NDhhMTE4ODM0Mjc1OTZ0ZXJtcw:E::E:" value="1" id="membersterms" required="required"> I have read and agree to abide by the <a href="/terms-of-use" target="_blank">Terms of Use</a> and <a href="/privacy-policy" target="_blank">Privacy Policy</a> <noscript>(this will only work if you have javascript and cookies enabled in your browser)</noscript></label>
+                    </div>
+                    <div class="row buttons">
+                        <input type="submit" name="members" value="Create my account" id="memberssubmit">
+                    </div>
+                </form>
+                <!---------------------->
+                <form action="https://www.moddb.com/members/register/#membersform" method="post" name="membersform">
+
+                    
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,78 @@
+﻿@model ModDB_Rebuild.Models.User;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ModDB_Rebuild</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+</head>
+<body>
+    <div id="body">
+        <div class="container">
+            <main>
+                <nav>
+                    <partial name="Navigation" />
+                </nav>
+                <content>
+                    @* an der Stelle von RenederBody wird die aktuell aufgerufene View angezeigt*@
+                    @RenderBody()
+                </content>
+                <footer>
+                    <div id="footer">
+                        <div class="content">
+                            <a href="https://www.dbolical.com" class="network dbolical" target="_blank" title="DBolical - Entertainment Euphoria"></a>
+                            <span class="terms">
+                                <a asp-action="impressum" asp-controller="home">Terms of use</a> | <a asp-action="impressum" asp-controller="home" style="padding-right: 0">Privacy Policy</a>
+                            </span>
+                            <span class="links">
+                                <a asp-action="index" asp-controller="blog">Blog</a> | <a asp-action="about" asp-controller="home">About</a> | <a asp-action="index" asp-controller="advertise">Advertise</a> | <a asp-action="contact" asp-controller="home">Contact</a> | <a asp-action="add" asp-controller="mod">Submit Mod</a> | <a href="https://mod.io" target="_blank" title="Cross Platform Mod support for game developers">Mod SDK for Games</a> | <a href="https://modularity.games" target="_blank" title="Publishing for mod friendly games">Publishing</a> | <a asp-action="sitemap" asp-controller="home">Site Map</a>
+                            </span>
+                            <span class="copyright">
+                                © 2020 - @DateTime.Now.Year
+                                <a href="https://www.dbolical.com" target="_blank">DBolical Pty Ltd.</a>&nbsp; All Rights Reserved.&nbsp; <a href="https://moddb.com/members/online">@ModDB_Rebuild.Models.User.User_AnonUser.User_ID modders</a>.
+                            </span>
+                        </div>
+                    </div>
+                </footer>
+            </main>
+        </div>
+    </div>
+
+
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

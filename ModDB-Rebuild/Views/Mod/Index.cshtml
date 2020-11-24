@@ -1,0 +1,116 @@
+﻿@using ModDB_Rebuild.Models
+@model List<Mod>
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<body>
+    <div id="body">
+        <div class="container" style="background: unset;">
+            <div class="column span-300-alt first">
+                
+                <div class="normalbox">
+                    <div class="normalcorner">
+                        <div class="title">
+                            <span class="options">
+                                <a class="addicon" asp-action="add" asp-controller="mod" title="Add mod">Add mod</a>
+                            </span>
+                            <span class="heading">Mods  (0 - 30 of 22,926)</span>
+                        </div>
+                    </div>
+                    <div class="inner">
+                        <div class="body bodysimple clear">
+                            <div class="tooltip"></div>
+
+                            @if (Model == null || Model.Count < 1) {
+                                <p class="viewbrowse" style="margin-top: 1em;">
+                                    No mods were found matching the criteria specified. We suggest you try the
+                                    <a asp-action="index" asp-controller="mod">mod list</a>
+                                    with no filter applied, to browse all available.
+                                    <a asp-action="add" asp-controller="mod">Add mod</a>
+                                    and help us achieve our mission of showcasing the best content from all developers.
+                                </p>
+                            } else {
+
+                            }
+                            <!-- The table of the articles -->
+                            <div class="table">
+
+                                <!-- a single article -->
+                                <div class="row rowcontent clear">
+                                    <!-- Here and example copied -->
+                                    <a class="image" href="https://www.moddb.com/games/timeless-adventure-a-journey-to-begin/news/dev-update-52" title="Dev Update #5">
+                                        <img src="https://media.moddb.com/cache/images/articles/1/289/288212/crop_120x90/Timeless_Adventure_A_Journey_to.png" alt="Dev Update #5" />
+                                    </a>
+                                    <div class="content">
+                                        <a href="https://www.moddb.com/games/timeless-adventure-a-journey-to-begin" title="Timeless Adventure: A Journey To Begin">
+                                            <img src="https://media.moddb.com/images/games/1/74/73970/icon64x6.png" alt="Timeless Adventure: A Journey To Begin" style="float: right; padding-left: 4px;" width="32" height="32">
+                                        </a>
+                                        <h4>
+                                            <a href="https://www.moddb.com/games/timeless-adventure-a-journey-to-begin/news/dev-update-52">Dev Update #5</a>
+                                        </h4>
+                                        <span class="date">
+                                            <time datetime="2020-11-22">1hour ago</time>
+                                        </span>
+                                        <span class="subheading">
+                                            <a href="/games/timeless-adventure-a-journey-to-begin" title="Game">Timeless Adventure: A Journey To Begin</a>
+                                        </span>
+                                        <p>
+                                            For Dev Update #5 the focus was on optimization, a new area, the water shader, and some minor (but nonetheless important) improvements.
+                                        </p>
+                                    </div>
+                                    ::after
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+@if(Model == null || Model.Count < 1) {
+    
+    <p>There are no Mods at all!</p>
+} else {
+    
+    <table>
+        <thead>
+
+            <tr>
+                <td colspan="5">Mod</td>
+            </tr>
+
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>Mod-Id</td>
+                <td>Mod-Name</td>
+                <td>Mod Description</td>
+                <td>Mod Releasedate</td>
+                <td>Mod Genre</td>
+            </tr>
+            @foreach(Mod m in Model) {
+
+                <tr>
+                    <td>@m.Mod_ID</td>
+                    <td>@m.Mod_Name</td>
+                    <td>@m.Mod_Description</td>
+                    <td>@m.Mod_ReleaseDate</td>
+                    <td>@m.Mod_ModGenre</td>
+                </tr>
+            }
+
+        </tbody>
+        <tfoot>
+
+            <tr>
+                <td colspan="5">All mods of database</td>
+            </tr>
+
+        </tfoot>
+    </table>
+}
